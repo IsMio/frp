@@ -24,6 +24,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: fulltclash-${{ matrix.os }}-amd64
-          path: ./cmd/frps*
+          name: jdjd
+          path: ./release/*
           if-no-files-found: error
