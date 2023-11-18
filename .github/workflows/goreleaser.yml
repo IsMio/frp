@@ -21,10 +21,9 @@ jobs:
         run: |
           ./package.sh
 
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
         with:
-          version: latest
-          args: release --clean --release-notes=./Release.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GPR_TOKEN }}
+          name: fulltclash-${{ matrix.os }}-amd64
+          path: ./cmd/frps*
+          if-no-files-found: error
